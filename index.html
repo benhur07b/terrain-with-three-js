@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GeoVisual Communication Challenge -- Topography</title>
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+        <!-- OG Meta -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="GeoVisual Communication Challenge -- Topography">
+        <meta property="og:description" content="This is my geovisualization of the topography of the province of Albay as part of our GmE 210 Spatial Visualization class. I used 10-m SAR DEM available from LiPAD processed with GDAL and ImageMagick and rendered using Three.js to depict elevation using a combined hillshade and slope. Let me know what you think!">
+        <meta property="og:image" content="media/images/topo.png"/>
+
+        <!-- Twitter OG -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="media/images/topo.png"/>
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+        <link href="static/css/main.css" rel="stylesheet">
+
+        <!-- Three.js -->
+        <script src="static/js/lib/three.js"></script>
+        <script src="static/js/lib/TerrainLoader.js"></script>
+        <script src="static/js/lib/OrbitControls.js"></script>
+        <script src="static/js/lib/TrackballControls.js"></script>
+        <script src="static/js/lib/Water.js"></script>
+        <script src="static/js/lib/stats.min.js"></script>
+        <script src="static/js/lib/dat.gui.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <div id="container"></div>
+        <div id="info">GVCC #1 - Topography of Albay using <a href="http://threejs.org">Three.js</a></div>
+        <div id="about">This is my geovisualization of the topography of the province of Albay as part of our GmE 210 Spatial Visualization class.<br><br>I used 10-m SAR DEM available from LiPAD processed with GDAL and ImageMagick and rendered using Three.js to depict elevation using a combined color-relief and hillshade texture.<br><br>Let me know what you think!<br><br>
+        <img class="img-responsive" id="legend" src="media/images/legend3.png">
+        </div>
+
+        <script src="static/js/scripts/terrain.js"></script>
+    </body>
+
+</html>

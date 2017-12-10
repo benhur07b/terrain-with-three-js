@@ -1,0 +1,37 @@
+body {
+    /*color: #61443e;*/
+    font-family:Monospace;
+    font-size:13px;
+    text-align:center;
+
+    background-color: #bfd1e5;
+    margin: 0px;
+    overflow: hidden;
+}
+
+#info {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 5px;
+}
+
+#about {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    width: 200px;
+    padding 10px;
+    font-size:10px;
+    text-align: right;
+}
+
+#legend {
+    max-width: 150px;
+    float: right;
+}
+
+a {
+
+    color: #a06851;
+}
