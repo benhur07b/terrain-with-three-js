@@ -48,7 +48,7 @@ function init() {
     // setSkybox();
 
     var terrainLoader = new THREE.TerrainLoader();
-    terrainLoader.load('../../media/images/RegV_Albay_200.bin', function(data) {
+    terrainLoader.load('../../static/media/heights/RegV_Albay_200.bin', function(data) {
        var geometry = new THREE.PlaneGeometry(60, 60, 512, 298);
        for (var i = 0, l = geometry.vertices.length; i < l; i++) {
            geometry.vertices[i].z = data[i] / 65535 * 6;
@@ -56,8 +56,7 @@ function init() {
 
        var loader = new THREE.TextureLoader();
        loader.load(
-           '../../media/images/texture3_200.jpg',
-            // '../../media/images/texture_hc_200.jpg',
+           '../../static/media/textures/texture3_200.jpg',
            function(texture){
                var material = new THREE.MeshLambertMaterial({
                    map: texture
@@ -91,7 +90,7 @@ function setWater() {
         {
             textureWidth: 512,
             textureHeight: 512,
-            waterNormals: new THREE.TextureLoader().load( '../..media/textures/waternormals.jpg', function ( texture ) {
+            waterNormals: new THREE.TextureLoader().load( '../../static/media/textures/waternormals.jpg', function ( texture ) {
                 texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
             }),
             alpha: 	parameters.alpha,
@@ -116,7 +115,7 @@ function setWater() {
 //     cubeMap.format = THREE.RGBFormat;
 //
 //     var loader = new THREE.ImageLoader();
-//     loader.load( '../../media/textures/skyboxsun25degtest.png', function ( image ) {
+//     loader.load( '/textures/skyboxsun25degtest.png', function ( image ) {
 //
 //         var getSide = function ( x, y ) {
 //
