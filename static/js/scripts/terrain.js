@@ -26,6 +26,7 @@ function init() {
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
+    // renderer.setClearColor(0xBFDDD1);
     renderer.setClearColor(0xEEEEEE);
     container.appendChild( renderer.domElement );
 
@@ -33,7 +34,7 @@ function init() {
     // scene.fog = new THREE.FogExp2( 0xaabbbb, 0.001 );
 
     camera = new THREE.PerspectiveCamera( 45, width/height, .1, 10000 );
-    camera.position.set( 0, -60, 45 );
+    camera.position.set( 0, -60, 30 );
 
     controls = new THREE.TrackballControls( camera );
     controls.rotateSpeed = 0.33;
@@ -47,7 +48,7 @@ function init() {
     terrainLoader.load('static/media/heights/RegV_Albay_200.bin', function(data) {
        var geometry = new THREE.PlaneGeometry(60, 60, 512, 298);
        for (var i = 0, l = geometry.vertices.length; i < l; i++) {
-           geometry.vertices[i].z = data[i] / 65535 * 6;
+           geometry.vertices[i].z = data[i] / 65535 * 5;
        };
 
        var loader = new THREE.TextureLoader();
