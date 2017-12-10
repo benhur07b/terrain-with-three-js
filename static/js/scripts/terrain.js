@@ -37,18 +37,14 @@ function init() {
 
     controls = new THREE.TrackballControls( camera );
     controls.rotateSpeed = 0.33;
-    controls.noRotate = true;
-    // controls.target.set( 0, 10, 0 );
-    // controls.minDistance = 40.0;
-    // controls.maxDistance = 200.0;
-    // camera.lookAt( controls.target );
+    // controls.noRotate = true;
 
     setLighting();
     // setWater();
     // setSkybox();
 
     var terrainLoader = new THREE.TerrainLoader();
-    terrainLoader.load('../../static/media/heights/RegV_Albay_200.bin', function(data) {
+    terrainLoader.load('static/media/heights/RegV_Albay_200.bin', function(data) {
        var geometry = new THREE.PlaneGeometry(60, 60, 512, 298);
        for (var i = 0, l = geometry.vertices.length; i < l; i++) {
            geometry.vertices[i].z = data[i] / 65535 * 6;
@@ -56,7 +52,7 @@ function init() {
 
        var loader = new THREE.TextureLoader();
        loader.load(
-           '../../static/media/textures/texture3_200.jpg',
+           'static/media/textures/texture3_200.jpg',
            function(texture){
                var material = new THREE.MeshLambertMaterial({
                    map: texture
@@ -82,32 +78,32 @@ function init() {
 
 }
 
-function setWater() {
-
-    water = new THREE.Water(
-        parameters.oceanSide * 5,
-        parameters.oceanSide * 5,
-        {
-            textureWidth: 512,
-            textureHeight: 512,
-            waterNormals: new THREE.TextureLoader().load( '../../static/media/textures/waternormals.jpg', function ( texture ) {
-                texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-            }),
-            alpha: 	parameters.alpha,
-            sunDirection: light.position.clone().normalize(),
-            sunColor: 0xffffff,
-            waterColor: 0x001e0f,
-            distortionScale: parameters.distortionScale,
-            fog: scene.fog != undefined
-        }
-    );
-
-    water.rotation.x = - Math.PI / 2;
-    water.receiveShadow = true;
-
-    scene.add( water );
-
-}
+// function setWater() {
+//
+//     water = new THREE.Water(
+//         parameters.oceanSide * 5,
+//         parameters.oceanSide * 5,
+//         {
+//             textureWidth: 512,
+//             textureHeight: 512,
+//             waterNormals: new THREE.TextureLoader().load( '../../static/media/textures/waternormals.jpg', function ( texture ) {
+//                 texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+//             }),
+//             alpha: 	parameters.alpha,
+//             sunDirection: light.position.clone().normalize(),
+//             sunColor: 0xffffff,
+//             waterColor: 0x001e0f,
+//             distortionScale: parameters.distortionScale,
+//             fog: scene.fog != undefined
+//         }
+//     );
+//
+//     water.rotation.x = - Math.PI / 2;
+//     water.receiveShadow = true;
+//
+//     scene.add( water );
+//
+// }
 
 // function setSkybox() {
 //
